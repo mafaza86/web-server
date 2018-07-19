@@ -2,16 +2,7 @@ var express = require('express');
 var app = express();
 const port =3000;
 
-var midleware = {
-	requireAuthentication:function(req,res,next){
-		console.log('private router hit!');
-		next();
-	},
-	logger : function(req,res,next){
-		console.log('REQUEST ' + new Date().toString()+ ' ' +  req.method + ' '+ req.originalUrl);
-		next();
-	}
-};
+var midleware = require('./midleware.js');
 
 app.use(midleware.logger);
 
