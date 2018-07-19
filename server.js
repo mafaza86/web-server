@@ -16,7 +16,7 @@ var midleware = {
 app.use(midleware.logger);
 
 app.get('/',function(req,res){
-	res.send('bismillah!');
+	res.send('bismillah! ');
 });
 
 app.get('/about',midleware.requireAuthentication,function(req,res){
